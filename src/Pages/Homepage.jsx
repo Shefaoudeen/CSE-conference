@@ -4,6 +4,7 @@ import Highlights from "../Components/Home/Highlights";
 import Intro from "../Components/Home/Intro";
 import PTU from "../Components/Home/PTU";
 import CSE from "../Components/Home/CSE";
+import Speakers from "../Components/Home/Speakers";
 
 const Homepage = () => {
   return (
@@ -12,6 +13,7 @@ const Homepage = () => {
       <Intro />
       <PTU />
       <CSE />
+      <Speakers/>
     </div>
   );
 };

@@ -1,9 +1,12 @@
 import React from "react";
+import icdnLogo from "../../assets/Images/ICDCN_logo.png"
 
 const Intro = () => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div className="w-screen relative h-screen flex justify-center items-center">
       <div className="w-[75%] text-justify text-xl flex flex-col gap-6 leading-[28px]">
+        <img src={icdnLogo} alt="logo" className="w-[500px] absolute -left-32 top-32 -z-10 opacity-20"/>
+
         <h1 className="text-3xl font-bold">The ICAISCDS - 2025</h1>
         <p>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The International Conference
