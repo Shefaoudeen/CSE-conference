@@ -3,7 +3,7 @@ import React from "react";
 const Timeline = () => {
   return (
     <div
-      className="relative w-screen h-screen bg-cover bg-center"
+      className="relative w-screen flex items-center justify-center min-h-screen bg-cover bg-center"
       style={{ backgroundImage: 'url(/images/cs1.jpg)' }} // Simple background image
     >
       {/* Dark Overlay */}
