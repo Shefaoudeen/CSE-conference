@@ -1,31 +1,27 @@
 import React from "react";
+import Hero from "../../Components/Home/Hero"; // Check if the path is correct
+import Highlights from "../../Components/Home/Highlights"; // Check if the path is correct
+import Intro from "../../Components/Home/Intro"; // Check if the path is correct
+import PTU from "../../Components/Home/PTU"; // Check if the path is correct
+import CSE from "../../Components/Home/CSE"; // Check if the path is correct
+import cs1 from "../../assets/Images/cs6.jpg"; // Ensure the image path is correct
 
 const RegHome = () => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
-      <div className="w-[75%] text-justify text-xl flex flex-col gap-6 leading-[28px]">
-        <h1 className="text-3xl font-bold">
-          REGISTATION FEE AND PUBLICATIONS ARTICLE PUBLICATION CHARGES
-        </h1>
-        <p>
-          Each submission may include one main author and up to two co-authors.
-          Only papers presented at the conference will be considered for
-          publication.
-        </p>
-        <p>
-          Upon acceptance, authors must pay the Article Processing Charges
-          (APC). Further details regarding payment and publication will be
-          communicated via email.
-        </p>
-        <p>
-          Authors must select a publication option as part of the review
-          process, which is required for forwarding the paper to the journal for
-          further evaluation and publication.
-        </p>
-        <p>
-          The details regarding various options for publications will be updated
-          soon
-        </p>
+    <div className="relative w-screen min-h-screen bg-gray-100">
+      {/* Background Slideshow */}
+      <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-50" 
+           style={{
+             backgroundImage: `url(${cs1})`, // Wrap the image path in 'url()' for CSS background-image
+           }}></div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <Hero />
+        <Intro />
+        <PTU />
+        <CSE />
+        <Highlights />
       </div>
     </div>
   );
