@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import cs1 from '../assets/Images/cs1.jpg'
+import cs2 from '../assets/Images/cs2.jpg'
+import cs3 from '../assets/Images/cs3.jpg'
+import cs4 from '../assets/Images/cs4.jpg'
+import cs5 from '../assets/Images/cs5.jpg'
 
 const images = [
-  "/Images/cs1.jpg",
-  "/Images/cs2.jpg",
-  "/Images/cs3.jpg",
-  "/Images/cs4.jpg",
-  "/Images/cs5.jpg"
+  cs1, cs2, cs3, cs4, cs5
 ]; // Images must be in 'public/Images/'
 
 const Timeline = () => {

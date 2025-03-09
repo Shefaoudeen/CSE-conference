@@ -6,15 +6,7 @@ import CSE from "../Components/Home/CSE";
 import Speakers from "../Components/Home/Speakers";
 
 const Homepage = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval); // Clean up the interval on component unmount
-  }, []);
+  
 
   return (
     <div>

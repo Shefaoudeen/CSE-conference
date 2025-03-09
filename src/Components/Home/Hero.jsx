@@ -18,7 +18,7 @@ const Hero = () => {
             <p>December 29- 30, 2025</p>
           </div>
         </div>
-        <img src={heroMain} alt="main-img" className="h-screen relative left-10 opacity-60" />
+        <img src={heroMain} alt="main-img" className="h-screen relative left-10 opacity-80" />
       </div>
     </div>
   )
