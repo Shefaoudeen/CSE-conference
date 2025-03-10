@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContactHome from "../Components/Contact/ContactHome";
+import contact from '../assets/Images/contact.png'
 
 // Array of images for the slideshow (If you're using the public folder)
 const images = [
@@ -22,20 +23,21 @@ const Contact = () => {
   }, []);
 
   return (
-    <div
-      className="relative min-h-screen flex flex-col justify-center items-center"
-      style={{
-        backgroundImage: `url(${images[currentImage]})`, // Dynamic background image
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+    <div className="relative w-full min-h-screen flex items-center justify-center">
+      {/* Background Image */}
+      <div className="fixed inset-0 w-full h-full">
+        <div
+          className="absolute inset-0 w-full h-full bg-cover bg-center opacity-70"
+          style={{ 
+            backgroundImage: `url(${contact})`
+          }}
+        />
+      </div>
+      {/* Dark Overlay with Blur */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center w-full h-full p-6 text-white">
+      <div className="relative z-10 w-full flex items-center justify-center">
         <ContactHome />
       </div>
     </div>
