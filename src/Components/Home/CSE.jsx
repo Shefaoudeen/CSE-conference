@@ -1,9 +1,11 @@
 import React from "react";
+import cseImg from "../../assets/Images/cs3.jpg"
 
 const CSE = () => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div className="w-screen flex justify-center items-center mt-10 mb-5 pb-5 border-b border-gray-300">
       <div className="w-[75%] text-justify text-xl flex flex-col gap-6 leading-[28px]">
+        <img src={cseImg} className="rounded-3xl h-96 object-cover" alt="" />
         <h1 className="text-3xl font-bold">
           COMPUTER SCIENCE AND ENGINEERING DEPARTMENT
         </h1>
