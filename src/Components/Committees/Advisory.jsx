@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   dept_advisory,
   international_advisory,
@@ -17,61 +18,103 @@ const advisorySections = [
 ];
 
 const Advisory = () => {
-  const images = [backgroundImage1, backgroundImage2, backgroundImage3];
-  const [currentImage, setCurrentImage] = useState(0);
   const [currentSection, setCurrentSection] = useState(0);
 
-  useEffect(() => {
-    const imageInterval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000); // Background image changes every 30 seconds
+  const handlePrevious = () => {
+    setCurrentSection((prev) => (prev - 1 + advisorySections.length) % advisorySections.length);
+  };
 
-    return () => clearInterval(imageInterval);
-  }, []);
-
-  useEffect(() => {
-    const sectionInterval = setInterval(() => {
-      setCurrentSection((prev) => (prev + 1) % advisorySections.length);
-    }, 3000); // Section changes every 30 seconds
-
-    return () => clearInterval(sectionInterval);
-  }, []);
+  const handleNext = () => {
+    setCurrentSection((prev) => (prev + 1) % advisorySections.length);
+  };
 
   return (
-    <div
-      className="relative w-screen min-h-screen flex flex-col justify-center items-center py-10 bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${images[currentImage]})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        transition: "background-image 1s ease-in-out",
-      }}
-    >
-      {/* Title */}
-      <h1 className="relative z-10 text-4xl font-bold text-white mb-8 text-center">
-        Advisory Committees
-      </h1>
+    <div className="min-h-screen w-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+      <div className="container mx-auto px-4 py-12">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-white mb-4">
+            Advisory Committees
+          </h1>
+          <div className="w-32 h-1 bg-white/30 mx-auto rounded-full"></div>
+        </div>
 
-      {/* Advisory Section - Only One Visible at a Time */}
-      <div className="relative z-10 w-full max-w-3xl px-6">
-        <div className="text-center p-6 bg-white/20 backdrop-blur-md rounded-xl border border-white/40 transition-opacity duration-1000">
-          <h2 className="text-2xl font-bold text-white mb-3">
-            {advisorySections[currentSection].title}
-          </h2>
-          <div className="text-lg flex flex-col gap-2">
-            {[].concat(...advisorySections[currentSection].data).map((ele, ind) => (
-              <div
-                key={ind}
-                className="border border-white/50 text-white p-2 hover:scale-105 duration-200 bg-white/20 hover:bg-white/30 ease-linear rounded-lg"
-              >
-                {ele}
+        {/* Navigation Dots */}
+        <div className="flex justify-center gap-2 mb-8">
+          {advisorySections.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSection(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSection 
+                  ? "bg-white scale-125" 
+                  : "bg-white/30 hover:bg-white/50"
+              }`}
+              aria-label={`Go to ${advisorySections[index].title}`}
+            />
+          ))}
+        </div>
+
+        {/* Main Content */}
+        <div className="relative max-w-7xl mx-auto">
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
+            aria-label="Previous section"
+          >
+            <ChevronLeft className="w-8 h-8 text-white" />
+          </button>
+
+          <button
+            onClick={handleNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
+            aria-label="Next section"
+          >
+            <ChevronRight className="w-8 h-8 text-white" />
+          </button>
+
+          {/* Committee Section */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-white/20">
+            <h2 className="text-3xl font-bold text-white text-center mb-8">
+              {advisorySections[currentSection].title}
+            </h2>
+            
+            {/* Scrollable Grid Container */}
+            <div className="max-h-[60vh] overflow-y-auto pr-4 custom-scrollbar">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {advisorySections[currentSection].data.map((member, index) => (
+                  <div
+                    key={index}
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300 transform hover:scale-[1.02]"
+                  >
+                    <p className="text-white text-base font-medium">{member}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+        </div>
+
+        {/* Section Title Display */}
+        <div className="flex flex-wrap justify-center mt-8 gap-4">
+          {advisorySections.map((section, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSection(index)}
+              className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                index === currentSection
+                  ? "bg-white text-blue-900 font-semibold"
+                  : "text-white/70 hover:text-white"
+              }`}
+            >
+              {section.title}
+            </button>
+          ))}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Advisory;

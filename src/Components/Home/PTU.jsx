@@ -1,9 +1,11 @@
 import React from "react";
+import ptuImg from "../../assets/Images/cs1.jpg"
 
 const PTU = () => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center">
+    <div className="w-screen flex justify-center items-center">
       <div className="w-[75%] text-justify text-xl flex flex-col gap-6 leading-[28px]">
+        <img src={ptuImg} className="rounded-3xl h-96 object-cover" alt="ptu" />
         <h1 className="text-3xl font-bold">
           PUDUCHERRY TECHNOLOGICAL UNIVERSITY
         </h1>

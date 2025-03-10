@@ -55,7 +55,7 @@ const Contact = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center items-center w-full h-full p-6 text-white">
+      <div className="relative z-10 w-full flex items-center justify-center">
         <ContactHome />
       </div>
     </div>
