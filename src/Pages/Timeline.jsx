@@ -5,9 +5,7 @@ import cs3 from '../assets/Images/cs3.jpg'
 import cs4 from '../assets/Images/cs4.jpg'
 import cs5 from '../assets/Images/cs5.jpg'
 
-const images = [
-  cs1, cs2, cs3, cs4, cs5
-]; // Images must be in 'public/Images/'
+const images = [cs1, cs2, cs3, cs4, cs5];
 
 const Timeline = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -35,12 +33,11 @@ const Timeline = () => {
         ))}
       </div>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-
-      {/* Content Box */}
-      <div className="relative z-10 flex flex-col items-center gap-6 bg-white/20 p-8 rounded-lg shadow-lg backdrop-blur-md border border-white/30 max-w-3xl w-full mx-4 text-center">
-        <h1 className="text-4xl font-bold text-white">Important Dates</h1>
+      {/* Content Box with Semi-Transparent Background */}
+      <div className="relative z-10 flex flex-col items-center gap-6 bg-black/50 p-8 rounded-lg shadow-lg border border-white/30 max-w-3xl w-full mx-4 text-center">
+        <h1 className="text-4xl font-bold text-white drop-shadow-lg">
+          Important Dates
+        </h1>
 
         <table className="text-lg border-separate border-spacing-3 text-white w-full">
           <tbody>
@@ -50,9 +47,9 @@ const Timeline = () => {
               ["Registration Deadline", "1st October 2025"],
               ["Conference Date", "29-30 December 2025"],
             ].map((row, index) => (
-              <tr key={index} className="bg-white/30 border border-white/40 rounded-lg">
-                <th className="font-medium px-4 py-2 text-left">{row[0]}</th>
-                <th className="font-medium px-4 py-2 text-left">{row[1]}</th>
+              <tr key={index} className="bg-black/40 border border-white/50 rounded-lg">
+                <th className="font-medium px-4 py-3 text-left drop-shadow-lg">{row[0]}</th>
+                <th className="font-medium px-4 py-3 text-left drop-shadow-lg">{row[1]}</th>
               </tr>
             ))}
           </tbody>
