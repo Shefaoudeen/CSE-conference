@@ -1,7 +1,7 @@
 import React from "react";
 import heroMain from "../../assets/Images/heroMain.jpg"
 import { FaCalendarAlt } from "react-icons/fa";
-import icdnLogo from "../../assets/Images/ICDCN_logo.png"
+import icdnLogo from "../../assets/Images/logos/mainLogo.png"
 
 const Hero = () => {
   return (

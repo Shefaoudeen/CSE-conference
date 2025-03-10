@@ -1,5 +1,5 @@
 import React from "react";
-import icdnLogo from "../../assets/Images/ICDCN_logo.png"
+import icdnLogo from "../../assets/Images/logos/mainLogo.png"
 
 const Intro = () => {
   return (

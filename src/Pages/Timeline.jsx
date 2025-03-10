@@ -21,7 +21,7 @@ const Timeline = () => {
   return (
     <div className="relative w-full min-h-screen flex items-center justify-center">
       {/* Background Slideshow */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full ">
         {images.map((image, index) => (
           <div
             key={index}
@@ -34,7 +34,7 @@ const Timeline = () => {
       </div>
 
       {/* Content Box with Semi-Transparent Background */}
-      <div className="relative z-10 flex flex-col items-center gap-6 bg-black/50 p-8 rounded-lg shadow-lg border border-white/30 max-w-3xl w-full mx-4 text-center">
+      <div className="relative z-10 flex flex-col items-center gap-6 border border-gray-400 bg-black/50 p-8 rounded-lg shadow-lg  max-w-3xl w-full mx-4 text-center">
         <h1 className="text-4xl font-bold text-white drop-shadow-lg">
           Important Dates
         </h1>
@@ -48,8 +48,8 @@ const Timeline = () => {
               ["Conference Date", "29-30 December 2025"],
             ].map((row, index) => (
               <tr key={index} className="bg-black/40 border border-white/50 rounded-lg">
-                <th className="font-medium px-4 py-3 text-left drop-shadow-lg">{row[0]}</th>
-                <th className="font-medium px-4 py-3 text-left drop-shadow-lg">{row[1]}</th>
+                <th className="font-medium px-4 py-3 text-left border border-gray-400 rounded-lg drop-shadow-lg">{row[0]}</th>
+                <th className="font-medium px-4 py-3 text-left border border-gray-400 rounded-lg drop-shadow-lg">{row[1]}</th>
               </tr>
             ))}
           </tbody>
