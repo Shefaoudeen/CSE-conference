@@ -31,7 +31,7 @@ const Contact = () => {
     <div className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
       {/* Previous Image (For Smooth Transition) */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}
+        className={`absolute blur-sm inset-0 transition-opacity duration-1000 ${fade ? "opacity-100" : "opacity-0"}`}
         style={{
           backgroundImage: `url(${images[prevImage]})`,
           backgroundPosition: "center",
@@ -42,7 +42,7 @@ const Contact = () => {
 
       {/* Current Image */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${fade ? "opacity-0" : "opacity-100"}`}
+        className={`absolute blur-sm inset-0 transition-opacity duration-1000 ${fade ? "opacity-0" : "opacity-100"}`}
         style={{
           backgroundImage: `url(${images[currentImage]})`,
           backgroundPosition: "center",
