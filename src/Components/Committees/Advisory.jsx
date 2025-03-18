@@ -21,7 +21,9 @@ const Advisory = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
   const handlePrevious = () => {
-    setCurrentSection((prev) => (prev - 1 + advisorySections.length) % advisorySections.length);
+    setCurrentSection(
+      (prev) => (prev - 1 + advisorySections.length) % advisorySections.length
+    );
   };
 
   const handleNext = () => {
@@ -29,7 +31,7 @@ const Advisory = () => {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+    <div className="min-h-screen w-screen bg-gradient-to-br from-gray-800 via-blue-600 to-gray-800">
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
@@ -39,7 +41,7 @@ const Advisory = () => {
           <div className="w-32 h-1 bg-white/30 mx-auto rounded-full"></div>
         </div>
 
-        {/* Navigation Dots */}
+        {/* Navigation Dots 
         <div className="flex justify-center gap-2 mb-8">
           {advisorySections.map((_, index) => (
             <button
@@ -52,6 +54,23 @@ const Advisory = () => {
               }`}
               aria-label={`Go to ${advisorySections[index].title}`}
             />
+          ))}
+        </div>
+          */}
+        {/* Section Title Display */}
+        <div className="flex flex-wrap justify-center m-8 gap-4">
+          {advisorySections.map((section, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSection(index)}
+              className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                index === currentSection
+                  ? "bg-white text-blue-900 font-semibold"
+                  : "text-white/70 hover:text-white"
+              }`}
+            >
+              {section.title}
+            </button>
           ))}
         </div>
 
@@ -79,7 +98,7 @@ const Advisory = () => {
             <h2 className="text-3xl font-bold text-white text-center mb-8">
               {advisorySections[currentSection].title}
             </h2>
-            
+
             {/* Scrollable Grid Container */}
             <div className="max-h-[60vh] overflow-y-auto pr-4 custom-scrollbar">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -95,26 +114,9 @@ const Advisory = () => {
             </div>
           </div>
         </div>
-
-        {/* Section Title Display */}
-        <div className="flex flex-wrap justify-center mt-8 gap-4">
-          {advisorySections.map((section, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSection(index)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 ${
-                index === currentSection
-                  ? "bg-white text-blue-900 font-semibold"
-                  : "text-white/70 hover:text-white"
-              }`}
-            >
-              {section.title}
-            </button>
-          ))}
-        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Advisory;

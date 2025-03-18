@@ -7,42 +7,36 @@ import backgroundImage3 from "../../assets/Images/cs8.jpg"; // Example third bac
 const Organizing_Secretaries = [
   "Dr. K. Vivekanandan",
   "Dr. P. Suresh",
-  "Dr. R. Subramanian"
+  "Dr. R. Subramanian",
 ];
 
 const Joint_Secretaries = [
   "Dr. S. Saraswathi",
   "Dr. V. Balasubramanian",
-  "Dr. K. Sathiyamurthy"
+  "Dr. K. Sathiyamurthy",
 ];
 
-const CommitteeCard = ({ 
-  title, 
-  name, 
-  position, 
-  department 
-}) => (
-  <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-8 transform hover:scale-[1.02] transition-all duration-300 w-full max-w-md">
+const CommitteeCard = ({ title, name, position, department }) => (
+  <div className="bg-gradient-to-br from-gray-800 via-blue-600 to-gray-800 backdrop-blur-sm rounded-2xl shadow-xl p-8 transform hover:scale-[1.02] transition-all duration-300 w-full max-w-md">
     <div className="text-center">
-      <h3 className="text-gray-600 font-semibold text-xl mb-3">{title}</h3>
-      <h2 className="text-3xl font-bold text-gray-900 mb-2">{name}</h2>
-      {position && <p className="text-lg text-gray-700">{position}</p>}
-      {department && <p className="text-gray-600">{department}</p>}
+      <h3 className="text-white font-semibold text-xl mb-3">{title}</h3>
+      <h2 className="text-3xl font-bold text-white mb-2">{name}</h2>
+      {position && <p className="text-lg text-white">{position}</p>}
+      {department && <p className="text-white">{department}</p>}
     </div>
   </div>
 );
 
-const SecretarySection = ({ 
-  title, 
-  members 
-}) => (
-  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-    <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center border-b-2 border-gray-400 pb-2">{title}</h3>
+const SecretarySection = ({ title, members }) => (
+  <div className="bg-gradient-to-br from-gray-800 via-blue-600 to-gray-800 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+    <h3 className="text-xl font-semibold text-white mb-4 text-center border-b-2 border-gray-400 pb-2">
+      {title}
+    </h3>
     <ul className="space-y-2">
       {members.map((member, index) => (
-        <li 
+        <li
           key={index}
-          className="text-gray-700 text-center font-medium py-1 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+          className="text-white text-center font-medium py-1 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200"
         >
           {member}
         </li>
@@ -54,7 +48,9 @@ const SecretarySection = ({
 function OrganizCommittee() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const backgroundImages = [
-    backgroundImage1, backgroundImage2, backgroundImage3
+    backgroundImage1,
+    backgroundImage2,
+    backgroundImage3,
   ];
 
   useEffect(() => {
@@ -66,9 +62,9 @@ function OrganizCommittee() {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden bg-[#F7F7F7]">
       {/* Background Image with Smooth Transition */}
-      {backgroundImages.map((image, index) => (
+      {/*backgroundImages.map((image, index) => (
         <div
           key={index}
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
@@ -77,17 +73,18 @@ function OrganizCommittee() {
             opacity: currentImageIndex === index ? 1 : 0,
           }}
         />
-      ))}
-      
-      {/* Gradient Overlay */}
+      ))*/}
+
+      {/* Gradient Overlay 
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 backdrop-blur-sm"></div>
+      */}
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
+      <div className="relative z-10 container mx-auto px-4 py-32">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mt-3 text-white mb-4">
+            <h1 className="text-5xl font-bold mt-3 text-black mb-4">
               Organizing Committee
             </h1>
             <div className="w-32 h-1 bg-white/30 mx-auto rounded-full"></div>
@@ -101,7 +98,7 @@ function OrganizCommittee() {
               position="Vice Chancellor"
               department="Puducherry Technological University"
             />
-            
+
             <CommitteeCard
               title="Patron"
               name="Prof. E. Ilavarasan"
@@ -116,7 +113,7 @@ function OrganizCommittee() {
               title="Organizing Secretaries"
               members={Organizing_Secretaries}
             />
-            
+
             <SecretarySection
               title="Joint Secretaries"
               members={Joint_Secretaries}
