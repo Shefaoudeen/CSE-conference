@@ -14,7 +14,7 @@ const SpeakerCard = ({
   organization, 
   topic 
 }) => (
-  <div className="bg-slate-100 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
+  <div className="bg-slate-100 max-w-[300px] rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
     <div className="aspect-square overflow-hidden">
       <img 
         src={image} 

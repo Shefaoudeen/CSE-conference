@@ -5,15 +5,14 @@ import backgroundImage3 from "../../assets/Images/cs8.jpg"; // Example third bac
 
 // Assuming these are the arrays from your Data/Committee file
 const Organizing_Secretaries = [
-  "Dr. K. Vivekanandan",
-  "Dr. P. Suresh",
-  "Dr. R. Subramanian"
+  "Dr. j. Jayabharathy",
+  "Dr. k. Sathyamurthy"
 ];
 
 const Joint_Secretaries = [
-  "Dr. S. Saraswathi",
-  "Dr. V. Balasubramanian",
-  "Dr. K. Sathiyamurthy"
+  "Dr. k. Saruladha",
+  "Dr. N. Sivakumar",
+  "Dr. V. Akila"
 ];
 
 const CommitteeCard = ({ 
@@ -108,7 +107,15 @@ function OrganizCommittee() {
               position="Professor and Head"
               department="Department of Computer Science and Engineering"
             />
+
+           <CommitteeCard
+              title="Co-Patron"
+              name="Dr. R. Kalpana"
+              position="Professor"
+              department="Department of Computer Science and Engineering"
+            />
           </div>
+
 
           {/* Secretaries Grid */}
           <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -118,7 +125,7 @@ function OrganizCommittee() {
             />
             
             <SecretarySection
-              title="Joint Secretaries"
+              title=" Joint Secretaries"
               members={Joint_Secretaries}
             />
           </div>

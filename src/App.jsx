@@ -22,6 +22,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/speakers" element={<Speakers />} />
+          {/* <Route path="/venue" element={<Speakers />} />  */}
         </Route>
       </Routes>
     </BrowserRouter>
