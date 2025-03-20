@@ -8,6 +8,7 @@ import Committees from "./Pages/Committees";
 import Contact from "./Pages/Contact";
 import Timeline from "./Pages/Timeline";
 import Speakers from "./Pages/Speakers";
+import LoginPage from "./Components/Registration/Loginpage";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/callforpaper" element={<CallforPaper />} />
           <Route path="/papersubmission" element={<PaperSubmission />} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/committees" element={<Committees />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/timeline" element={<Timeline />} />

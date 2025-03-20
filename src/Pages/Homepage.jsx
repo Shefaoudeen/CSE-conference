@@ -4,6 +4,8 @@ import Intro from "../Components/Home/Intro";
 import PTU from "../Components/Home/PTU";
 import CSE from "../Components/Home/CSE";
 import Speakers from "../Components/Home/Speakers";
+import Accommodation from "../Components/Home/Accommodation";
+
 
 const Homepage = () => {
   
@@ -14,6 +16,7 @@ const Homepage = () => {
       <Intro />
       <PTU />
       <CSE />
+      <Accommodation />
       <Speakers/>
     </div>
   );
