@@ -2,9 +2,26 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex w-full justify-center py-1 bg-gray-200">
+    <div className="flex w-full relative justify-center py-3 bg-black text-white">
       <div>
-        <h1 className="text-xl font-semibold py-2">Department of CSE, PTU 2025</h1>
+        <h1 className="text-lg font-semibold py-2">
+          Copyright ©2025{" "}
+          <a
+            className="text-gray-400 hover:underline"
+            target="_blank"
+            href="https://ptuniv.edu.in/cse"
+          >
+            PTU CSE
+          </a>{" "}
+          | Designed by{" "}
+          <a
+            className="text-gray-400 hover:underline"
+            target="_blank"
+            href="https://ptu-designclub.netlify.app/"
+          >
+            Design Club PTU
+          </a>
+        </h1>
       </div>
     </div>
   );

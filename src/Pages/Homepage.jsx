@@ -17,7 +17,7 @@ const Homepage = () => {
       <PTU />
       <CSE />
       <Accommodation />
-      <Speakers/>
+      <Speakers /> 
     </div>
   );
 };
