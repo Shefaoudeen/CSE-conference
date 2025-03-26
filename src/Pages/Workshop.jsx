@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const workshops = [
   {
@@ -26,8 +26,7 @@ const workshops = [
     ],
   },
   {
-    title:
-      "1st International Workshop on Advancements in Secure Communications and Computing",
+    title: "1st International Workshop on Advancements in Secure Communications and Computing",
     topics: [
       "Secure Edge, Fog Computing and Mobile Offloading",
       "Secure Next Generation High Performance Computing",
@@ -53,38 +52,80 @@ const workshops = [
 ];
 
 const Workshops = () => {
-  return (
-    <div className="max-w-6xl mx-auto my-16 px-6">
-      <h1 className="text-4xl font-bold text-center text-blue-700 border-b-4 border-blue-500 pb-3">
-        Workshops
-      </h1>
-      <p className="mt-6 text-lg text-gray-700 text-center">
-        Co-located with ICAISDA-2025, two workshops will be conducted:
-      </p>
+  const [activeTab, setActiveTab] = useState(0);
 
-      {/* Workshops Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+  return (
+    <div className="max-w-7xl mt-16 mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div className="text-center">
+        <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+          <span className="block text-blue-600">Workshops</span>
+          <span className="block text-2xl mt-3 text-gray-500 font-normal">
+            ICAISDA-2025
+          </span>
+        </h1>
+        <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-500">
+          Co-located with ICAISDA-2025, two workshops will be conducted focusing on cutting-edge technologies and research.
+        </p>
+      </div>
+
+      <div className="mt-12 flex justify-center space-x-4">
+        {workshops.map((workshop, idx) => (
+          <button
+            key={idx}
+            onClick={() => setActiveTab(idx)}
+            className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+              activeTab === idx
+                ? "bg-blue-600 text-white shadow-lg"
+                : "bg-white text-gray-600 hover:bg-gray-50"
+            }`}
+          >
+            Workshop {idx + 1}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-8">
         {workshops.map((workshop, index) => (
-          <div key={index} className="bg-gray-100 p-6 rounded-xl shadow-lg">
-            <h2 className="text-2xl font-bold text-blue-600 border-b-2 border-blue-400 pb-2">
-              {workshop.title}
-            </h2>
-            <ul className="mt-4 space-y-2 text-gray-700 list-disc list-inside">
-              {workshop.topics.map((topic, i) => (
-                <li key={i}>{topic}</li>
-              ))}
-            </ul>
+          <div
+            key={index}
+            className={`transition-all duration-300 ${
+              activeTab === index ? "opacity-100" : "hidden opacity-0"
+            }`}
+          >
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="px-6 py-8 sm:p-10">
+                <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
+                  {workshop.title}
+                </h2>
+
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Topics</h3>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {workshop.topics.map((topic, i) => (
+                      <div
+                        key={i}
+                        className="relative rounded-lg border border-gray-200 bg-gray-100 px-6 py-4 shadow-sm hover:border-blue-400 hover:shadow transition-all duration-200"
+                      >
+                        <p className="text-lg text-gray-800 font-medium">{topic}</p> {/* Bigger text */}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
-      <p className="mt-6 text-lg text-gray-700 text-center mx-auto max-w-3xl leading-relaxed">
-        <h1>The workshops will include a combination of regular papers and invited talks. Their 
-        main purpose is to provide a platform for presenting new ideas in these focused areas. 
-        These workshops enable stimulating discussions on state-of-the-art, emerging, visionary, 
-        and possibly provocative topics. Workshop papers are planned to be published along with 
-        the main conference proceedings.</h1>
-      </p>
+      <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-inner">
+        <p className="text-lg text-gray-700 leading-relaxed">
+          The workshops will include a combination of regular papers and invited talks. Their 
+          main purpose is to provide a platform for presenting new ideas in these focused areas. 
+          These workshops enable stimulating discussions on state-of-the-art, emerging, visionary, 
+          and possibly provocative topics. Workshop papers are planned to be published along with 
+          the main conference proceedings.
+        </p>
+      </div>
     </div>
   );
 };
