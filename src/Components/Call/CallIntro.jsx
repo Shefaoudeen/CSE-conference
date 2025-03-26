@@ -1,51 +1,99 @@
 import React from "react";
 
-const CallIntro = () => {
+const CallForPapers = () => {
   return (
-    <div className="w-screen h-screen flex flex-col gap-10 justify-center items-center pt-[25vh]">
-      <div className="w-[75%] text-xl text-justify flex flex-col gap-5">
-        <h1 className="text-3xl">CALL FOR PAPERS</h1>
-        <p>
-          The ICAISCDS-2025 invite researchers, academicians, scientists and
-          industry experts to submit their original research papers, case
-          studies, survey works and innovative applications in the fields of{" "}
-          <strong>
-            Artificial Intelligence (AI), Secured Computing(SC) and Data
-            Science(DS)
-          </strong>{" "}
-          for presentation at the Conference. Submissions are encouraged on a
-          wide range of topics, including but not limited to the following:
-        </p>
-      </div>
-      <div className="w-[75%] flex flex-col gap-20 justify-center items-center  rounded-full relative">
-        <div className="absolute min-h-[110%] border-4 min-w-[45%] rounded-full -z-20"></div>
-        <div className="w-[50%] flex justify-between">
-          <div className="border-2  p-5 text-center bg-slate-200 rounded-xl">
-            <h1>TRACK - 1</h1>ARTIFICIAL INTELLIGENCE
-          </div>
-          <div className="border-2  p-5 text-center bg-slate-200 rounded-xl">
-            <h1>TRACK - 2</h1>DATA SCIENCE & BIG DATA
-          </div>
+    <div className="max-w-6xl mx-auto my-16 px-6">
+      <h1 className="text-4xl font-bold text-center text-blue-700 border-b-4 border-blue-500 pb-3">
+        Call for Papers for Conference
+      </h1>
+      <p className="mt-6 text-lg text-gray-700 text-center mx-auto max-w-3xl leading-relaxed">
+         The ICAISDA-2025 invites researchers, academicians, scientists, and industry 
+         experts to submit their original research papers, case studies, survey works, 
+         and innovative applications in the fields of <b>Artificial Intelligence</b> and 
+        <b> Secure Data Analytics</b> for presentation at the conference.
+     </p>
+
+
+
+      {/* Scope Section */}
+      <h2 className="text-2xl font-bold text-blue-700 mt-12 border-b-2 border-blue-500 pb-2">
+        Scope
+      </h2>
+      <p className="mt-4 text-gray-700">
+        The scope of the conference tentatively includes, but is not limited to:
+      </p>
+
+      {/* Topics Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        {/* Artificial Intelligence Section */}
+        <div className="bg-gray-100 p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold text-blue-600 border-b-2 border-blue-400 pb-2">
+            Artificial Intelligence
+          </h3>
+          <ul className="mt-4 space-y-2 text-gray-700 list-disc list-inside">
+            {[
+              "Machine Learning and Deep Learning",
+              "Large Language Models and Transformers",
+              "AI Algorithms and Architectures",
+              "Reinforcement Learning and Autonomous Systems",
+              "AI for Sustainable Development",
+              "Generative, Responsive and Explainable AI",
+              "Quantum Algorithms and Quantum Machine Learning",
+              "Automated Code Generation and Algorithm Optimization",
+              "Information Theory for AI",
+              "Statistical Learning Theory in AI",
+              "Graphical Models and Probabilistic Inference",
+              "Representation Learning and Feature Engineering",
+              "Human-machine Interaction and Data Capturing Techniques",
+              "AI and Blockchain Technology",
+              "AI Model Optimization and Efficiency",
+              "Bias and Fairness in AI Models",
+              "AI and Quantum Computing",
+              "AI and Internet of Things (IoT)",
+              "AI-powered Cloud Resource Allocation",
+              "AI for Natural Language Processing and Speech Recognition",
+              "Computer Vision and Image Processing",
+              "Agentic AI and its Impact",
+              "AI and Emerging Technologies",
+            ].map((topic, index) => (
+              <li key={index}>{topic}</li>
+            ))}
+          </ul>
         </div>
-        <div className="w-[80%] flex justify-between">
-          <div className="border-2  p-5 text-center bg-slate-200 rounded-xl">
-            <h1>TRACK - 3</h1>AI & DATA SCIENCE APPLICATIONS
-          </div>
-          <div className="border-2  p-5 text-center bg-slate-200 rounded-xl">
-            <h1>TRACK - 4</h1>AI & DATA SCIENCE IN COMMUNICATIONS
-          </div>
-        </div>
-        <div className="w-[60%] flex justify-between">
-          <div className="border-2  p-5 text-center bg-slate-200 rounded-xl">
-            <h1>TRACK - 5</h1>AI & DATA SCIENCE IN COMPUTING
-          </div>
-          <div className="border-2  p-5 text-center bg-slate-200 rounded-xl">
-            <h1>TRACK - 6</h1>AI & DATA SCIENCE IN SECURITY
-          </div>
+
+        {/* Secure Data Analytics Section */}
+        <div className="bg-gray-100 p-6 rounded-xl shadow-lg">
+          <h3 className="text-xl font-bold text-blue-600 border-b-2 border-blue-400 pb-2">
+            Secure Data Analytics
+          </h3>
+          <ul className="mt-4 space-y-2 text-gray-700 list-disc list-inside">
+            {[
+              "Privacy-preserving Machine Learning and Artificial Intelligence",
+              "Encryption Methods for Data Analysis",
+              "Applications of Data Analytics in Security Domains",
+              "Data Analytics for Security Attacks and Defenses",
+              "Secure Social Network Analysis and Mining",
+              "Stream Data Analytics for Cyber Security",
+              "Privacy in Big Data Management and Analytics",
+              "Security Issues in Supply Chain Analytics",
+              "Security Issues in Computer Vision and Video Analytics",
+              "Industry Applications of Privacy-preserving in Big Data Analytics",
+              "Network and Information Security Using Data Analytics",
+              "Fraud Detection and Risk Management",
+              "Threat Intelligence and Incident Response",
+              "Blockchain and Data Security",
+              "Privacy, Surveillance and AI Ethics",
+              "Secure Software Development",
+              "Leveraging AI for Enhanced Cybersecurity",
+              "Advances in Data Science and Analytics",
+            ].map((topic, index) => (
+              <li key={index}>{topic}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
   );
 };
 
-export default CallIntro;
+export default CallForPapers;

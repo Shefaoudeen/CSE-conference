@@ -1,26 +1,25 @@
 import React, { useState, useEffect } from "react";
-import backgroundImage1 from "../../assets/Images/cs10.jpg"; // Ensure the image path is correct
-import backgroundImage2 from "../../assets/Images/cs7.jpg"; // Example second background image
-import backgroundImage3 from "../../assets/Images/cs8.jpg"; // Example third background image
+import backgroundImage1 from "../../assets/Images/cs10.jpg"; 
+import backgroundImage2 from "../../assets/Images/cs7.jpg"; 
+import backgroundImage3 from "../../assets/Images/cs8.jpg"; 
 
-// Assuming these are the arrays from your Data/Committee file
 const Organizing_Secretaries = [
-  "Dr. K. Vivekanandan",
-  "Dr. P. Suresh",
-  "Dr. R. Subramanian",
+  "Dr. J. Jayabharathy",
+  "Dr. K. Sathiyamurthy",
+  "Dr. J. I. Sheeba",
 ];
 
 const Joint_Secretaries = [
-  "Dr. S. Saraswathi",
-  "Dr. V. Balasubramanian",
-  "Dr. K. Sathiyamurthy",
+  "Dr. K. Saruladha",
+  "Dr. N. Sivakumar",
+  "Dr. V. Akila",
 ];
 
 const CommitteeCard = ({ title, name, position, department }) => (
-  <div className="bg-gradient-to-br from-gray-800 via-blue-600 to-gray-800 backdrop-blur-sm rounded-2xl shadow-xl p-8 transform hover:scale-[1.02] transition-all duration-300 w-full max-w-md">
+  <div className="bg-gradient-to-br from-gray-800 via-blue-600 to-gray-800 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 w-full max-w-md">
     <div className="text-center">
-      <h3 className="text-white font-semibold text-xl mb-3">{title}</h3>
-      <h2 className="text-3xl font-bold text-white mb-2">{name}</h2>
+      <h3 className="text-white font-semibold text-xl mb-2">{title}</h3>
+      <h2 className="text-2xl font-bold text-white mb-1">{name}</h2>
       {position && <p className="text-lg text-white">{position}</p>}
       {department && <p className="text-white">{department}</p>}
     </div>
@@ -63,46 +62,50 @@ function OrganizCommittee() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-[#F7F7F7]">
-      {/* Background Image with Smooth Transition */}
-      {/*backgroundImages.map((image, index) => (
+      {backgroundImages.map((image, index) => (
         <div
           key={index}
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
-          style={{
-            backgroundImage: `url(${image})`,
-            opacity: currentImageIndex === index ? 1 : 0,
-          }}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            currentImageIndex === index ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundImage: `url(${image})` }}
         />
-      ))*/}
+      ))}
 
-      {/* Gradient Overlay 
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 backdrop-blur-sm"></div>
-      */}
 
-      {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-32">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold mt-3 text-black mb-4">
+            <h1 className="text-5xl font-bold mt-3 text-white mb-4">
               Organizing Committee
             </h1>
             <div className="w-32 h-1 bg-white/30 mx-auto rounded-full"></div>
           </div>
 
-          {/* Main Committee Members */}
-          <div className="space-y-8 mb-16 mx-auto flex flex-col items-center">
+          {/* Chief Patron - Centered */}
+          <div className="flex justify-center mb-10">
             <CommitteeCard
               title="Chief Patron"
               name="Prof. Dr. S. Mohan"
               position="Vice Chancellor"
               department="Puducherry Technological University"
             />
+          </div>
 
+          {/* Patron & Co-Patron - Adjusted Closer */}
+          <div className="flex justify-center gap-12 mb-16">
             <CommitteeCard
               title="Patron"
               name="Prof. E. Ilavarasan"
               position="Professor and Head"
+              department="Department of Computer Science and Engineering"
+            />
+
+            <CommitteeCard
+              title="Co-Patron"
+              name="Dr. R. Kalpana"
+              position="Professor"
               department="Department of Computer Science and Engineering"
             />
           </div>

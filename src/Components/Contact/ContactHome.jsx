@@ -61,7 +61,7 @@ const ContactHome = () => {
       />
 
       <div className="flex flex-col gap-8 items-center relative z-[200]">
-        <h1 className="font-bold text-5xl text-white">Contact</h1>
+        <h1 className="font-bold text-5xl text-white">Contacts</h1>
         <div className="rounded-xl overflow-hidden  mt-5">
           <div className=" px-4 py-5  ">
             <h1 className=" text-2xl font-bold text-center">
