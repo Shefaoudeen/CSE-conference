@@ -2,7 +2,7 @@ import React from "react";
 
 const CallForPapers = () => {
   return (
-    <div className="max-w-6xl mx-auto my-16 px-6">
+    <div className="max-w-7xl mx-auto my-16 px-6">
       <h1 className="text-4xl font-bold text-center text-blue-700 border-b-4 border-blue-500 pb-3">
         Call for Papers for Conference
       </h1>
@@ -12,8 +12,6 @@ const CallForPapers = () => {
          and innovative applications in the fields of <b>Artificial Intelligence</b> and 
         <b> Secure Data Analytics</b> for presentation at the conference.
      </p>
-
-
 
       {/* Scope Section */}
       <h2 className="text-2xl font-bold text-blue-700 mt-12 border-b-2 border-blue-500 pb-2">
