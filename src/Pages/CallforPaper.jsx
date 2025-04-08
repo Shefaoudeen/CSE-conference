@@ -12,7 +12,7 @@ const CallforPaper = () => {
       {/* Content Box */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
         <CallIntro />
-      
+        
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { MainLogo } from "../assets";
 
 const Header = () => {
@@ -41,32 +41,31 @@ const Header = () => {
           : "bg-white shadow-lg shadow-black/20 fixed"
       } transition-all duration-500 ease-linear`}
     >
-      <div className="flex w-[85%] justify-around items-center py-3 px-8 text-xs">
-        <div className="flex items-center justify-center w-[30%]">
+      <div className="flex w-[85%] gap-3 justify-around items-center py-3 px-4 text-xs">
+        <div className="flex items-center justify-center w-[40%] pr-8">
           <img src={MainLogo} width={70} className="mr-5" alt="Logo" />
-          <h1 className="text-xl font-medium">ICAISDA 2025</h1>
+          <h1 className="text-xl font-medium text-nowrap">ICAISDA 2025</h1>
         </div>
 
         {[
           { name: "HOME", path: "/" },
           { name: "CALL FOR PAPERS", path: "/callforpaper" },
           { name: "PAPER SUBMISSION", path: "/papersubmission" },
-          { name: "WORKSHOP", path: "/workshop" },
           { name: "REGISTRATION", path: "/registration" },
           { name: "SPEAKERS", path: "/speakers" },
           { name: "COMMITTEES", path: "/committees" },
           { name: "CONTACTS", path: "/contact" },
           { name: "VENUE", path: "/venue" },
         ].map(({ name, path }) => (
-          <Link
+          <NavLink
             key={name}
             to={path}
-            className={`py-2 px-4 rounded-lg font-bold ${
+            className={`py-2 text-lg px-4 rounded-xl hover:border-b-4 border-blue-700 font-semibold text-nowrap ${
               currentId === path.substring(1) ? "text-black" : "text-gray-500"
             }`}
           >
             {name}
-          </Link>
+          </NavLink>
         ))}
       </div>
     </div>

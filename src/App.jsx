@@ -3,7 +3,6 @@ import Layout from "./Layout/Layout";
 import Homepage from "./Pages/Homepage";
 import CallforPaper from "./Pages/CallforPaper";
 import PaperSubmission from "./Pages/PaperSubmission";
-import Workshop from "./Pages/workshop";
 import Registration from "./Pages/Registration";
 import Committees from "./Pages/Committees";
 import Contact from "./Pages/Contact";
@@ -18,13 +17,12 @@ import LoginPage from "./Components/Registration/Loginpage";
 export default function App() {
   return (
     <ParallaxProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='/icaisda25'>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Homepage />} />
             <Route path="/callforpaper" element={<CallforPaper />} />
             <Route path="/papersubmission" element={<PaperSubmission />} />
-            <Route path="/workshop" element={<Workshop />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/committees" element={<Committees />} />
