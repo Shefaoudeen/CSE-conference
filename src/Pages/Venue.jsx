@@ -50,7 +50,7 @@ const VenueDetails = () => {
                 <p className="text-white text-lg">East Coast Road, Puducherry, 605 014</p>
               </div>
               <div className="flex items-center space-x-3">
-                <Users className="w-6 h-6 text-blue-700" />
+                <Users className="w-6 h-6 text-blue-400" />
                 <p className="text-white text-lg">600+ seats with modern AV setup</p>
               </div>
             </div>
