@@ -1,41 +1,41 @@
 import React, { useState, useEffect } from "react";
-import backgroundImage1 from "../../assets/Images/cs10.jpg"; 
-import backgroundImage2 from "../../assets/Images/cs7.jpg"; 
-import backgroundImage3 from "../../assets/Images/cs8.jpg"; 
+import backgroundImage1 from "../../assets/Images/cs10.jpg";
+import backgroundImage2 from "../../assets/Images/cs7.jpg";
+import backgroundImage3 from "../../assets/Images/cs8.jpg";
 
 const Organizing_Secretaries = [
-  "Dr. J. Jayabharathy",
-  "Dr. K. Sathiyamurthy",
-  "Dr. J. I. Sheeba",
+  "Dr. J. Jayabharathy, Professor, CSE, PTU",
+  "Dr. K. Sathiyamurthy, Professor, CSE, PTU",
+  "Dr. J. I. Sheeba, Associate Professor, CSE, PTU",
 ];
 
 const Joint_Secretaries = [
-  "Dr. K. Saruladha",
-  "Dr. N. Sivakumar",
-  "Dr. V. Akila",
+  "Dr. K. Saruladha, Professor, CSE, PTU",
+  "Dr. N. Sivakumar, Professor, CSE, PTU",
+  "Dr. V. Akila, Associate Professor, CSE, PTU",
 ];
 
 const CommitteeCard = ({ title, name, position, department }) => (
-  <div className="bg-gradient-to-br from-gray-800 via-blue-600 to-gray-800 backdrop-blur-sm rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-300 w-full max-w-md">
+  <div className="bg-gradient-to-br from-[#1E40AF] via-[#2563EB] to-[#3B82F6] rounded-2xl shadow-lg p-6 transform hover:scale-105 transition-all duration-300 w-full max-w-md border border-blue-300/50 hover:shadow-blue-400/50">
     <div className="text-center">
-      <h3 className="text-white font-semibold text-xl mb-2">{title}</h3>
+      <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
       <h2 className="text-2xl font-bold text-white mb-1">{name}</h2>
-      {position && <p className="text-lg text-white">{position}</p>}
-      {department && <p className="text-white">{department}</p>}
+      {position && <p className="text-lg text-white mb-1">{position}</p>}
+      {department && <p className="text-white mb-1">{department}</p>}
     </div>
   </div>
 );
 
 const SecretarySection = ({ title, members }) => (
-  <div className="bg-gradient-to-br from-gray-800 via-blue-600 to-gray-800 backdrop-blur-sm rounded-xl p-6 shadow-lg">
-    <h3 className="text-xl font-semibold text-white mb-4 text-center border-b-2 border-gray-400 pb-2">
+  <div className="bg-gradient-to-br from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] rounded-xl p-6 shadow-lg border border-blue-300/30 hover:shadow-blue-500/50 transition-all duration-300">
+    <h3 className="text-xl font-semibold text-white mb-4 text-center border-b border-blue-400 pb-2">
       {title}
     </h3>
     <ul className="space-y-2">
       {members.map((member, index) => (
         <li
           key={index}
-          className="text-white text-center font-medium py-1 px-4 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+          className="text-white text-center font-medium py-1 px-4 rounded-lg hover:bg-blue-500/20 transition-colors duration-200"
         >
           {member}
         </li>
@@ -46,11 +46,7 @@ const SecretarySection = ({ title, members }) => (
 
 function OrganizCommittee() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const backgroundImages = [
-    backgroundImage1,
-    backgroundImage2,
-    backgroundImage3,
-  ];
+  const backgroundImages = [backgroundImage1, backgroundImage2, backgroundImage3];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,7 +57,7 @@ function OrganizCommittee() {
   }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-[#F7F7F7]">
+    <div className="min-h-screen relative overflow-hidden">
       {backgroundImages.map((image, index) => (
         <div
           key={index}
@@ -72,33 +68,31 @@ function OrganizCommittee() {
         />
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 backdrop-blur-sm"></div>
-
       <div className="relative z-10 container mx-auto px-4 py-32">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold mt-3 text-white mb-4">
               Organizing Committee
             </h1>
-            <div className="w-32 h-1 bg-white/30 mx-auto rounded-full"></div>
+            <div className="w-32 h-1 bg-blue-300 mx-auto rounded-full"></div>
           </div>
 
           {/* Chief Patron - Centered */}
           <div className="flex justify-center mb-10">
             <CommitteeCard
               title="Chief Patron"
-              name="Prof. Dr. S. Mohan"
+              name="Prof. S. Mohan"
               position="Vice Chancellor"
               department="Puducherry Technological University"
             />
           </div>
 
-          {/* Patron & Co-Patron - Adjusted Closer */}
+          {/* Patron & Co-Patron */}
           <div className="flex justify-center gap-12 mb-16">
             <CommitteeCard
               title="Patron"
-              name="Prof. E. Ilavarasan"
-              position="Professor and Head"
+              name="Prof. Dr E. Ilavarasan"
+              position="Department Head"
               department="Department of Computer Science and Engineering"
             />
 

@@ -1,4 +1,4 @@
-import MainLogo from "./Images/logos/mainLogo.png";
-import PTULogo from "./Images/ptu-logo.png";
+import MainLogo from "../assets/Images/logos/mainLogo.png";
+import PTULogo from "../assets/Images/logos/ptulogo2.png";
 
 export { MainLogo, PTULogo };
