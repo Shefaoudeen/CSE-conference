@@ -1,18 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Signup from './pages/Signup';
-import OTPVerify from './pages/OTPVerify';
-import Login from './pages/Login';
+import Register from "./components/Register";
+import Login from "./components/Login";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Signup />} />
-        <Route path="/verify" element={<OTPVerify />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+    <div className="min-h-screen bg-gray-100 p-4">
+      <h1 className="text-3xl font-bold text-center mb-6 text-purple-600">Welcome </h1>
+      <div className="flex flex-col md:flex-row justify-center items-start gap-8">
+        <Register />
+        <Login />
+      </div>
+    </div>
   );
 }
 

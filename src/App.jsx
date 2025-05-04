@@ -3,6 +3,8 @@ import Layout from "./Layout/Layout";
 import Homepage from "./Pages/Homepage";
 import CallforPaper from "./Pages/CallforPaper";
 import PaperSubmission from "./Pages/PaperSubmission";
+import PaperRegistration from "./Pages/PaperRegistration";
+import WorkShop from "./Pages/WorkShop";
 import Registration from "./Pages/Registration";
 import Committees from "./Pages/Committees";
 import Contact from "./Pages/Contact";
@@ -11,7 +13,7 @@ import Speakers from "./Pages/Speakers";
 import Venue from "./Pages/Venue";
 import { ParallaxProvider } from "react-scroll-parallax";
 import LoginPage from "./Components/Registration/Loginpage";
-
+import ViewSubmittedPaper from './components/ViewSubmittedPaper';
 
 
 export default function App() {
@@ -23,6 +25,8 @@ export default function App() {
             <Route index element={<Homepage />} />
             <Route path="/callforpaper" element={<CallforPaper />} />
             <Route path="/papersubmission" element={<PaperSubmission />} />
+            <Route path="/paperRegistration" element={<PaperRegistration />} />
+            <Route path="/WorkShop" element={<WorkShop />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/committees" element={<Committees />} />
@@ -30,6 +34,7 @@ export default function App() {
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/speakers" element={<Speakers />} />
             <Route path="/venue" element={<Venue />} />
+            <Route path="/view-paper" element={<ViewSubmittedPaper />} />
         </Route>
         </Routes>
       </BrowserRouter>
