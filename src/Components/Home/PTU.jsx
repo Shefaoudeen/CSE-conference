@@ -5,16 +5,16 @@ import { PTULogo } from "../../assets";
 const PTU = () => {
   return (
     <div className="w-screen relative flex justify-center items-center py-20">
-      <div className="w-[75%] text-justify text-lg flex items-center gap-6 tracking-wide leading-relaxed ">
+      <div className="md:w-[75%] text-justify text-lg flex flex-col md:flex-row items-center gap-6 tracking-wide leading-relaxed ">
         <img
           src={PTULogo}
           alt="logo"
-          className="w-[300px] absolute right-[10%] -z-10 opacity-20"
+          className="w-[300px] absolute bottom-[40%] md:top-[30%] md:right-[10%] -z-10 opacity-20"
         />
-        <div className="w-[40%]">
+        <div className="w-[90%] md:w-[40%]">
           <img src={ptuImg} className="h-96 object-cover" alt="ptu" />
         </div>
-        <div className="w-[60%]">
+        <div className="w-[90%] md:w-[60%] px-1 md:px-0">
           <h1 className="text-3xl font-bold pb-10 text-blue-800">Puducherry Technological University-(PTU)</h1>
           <p>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Puducherry Technological

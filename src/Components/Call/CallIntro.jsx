@@ -57,7 +57,7 @@ const App = () => {
           <p className="text-lg text-gray-700">
             Submit research papers in <span className="font-bold text-blue-700">Artificial Intelligence</span> and <span className="font-bold text-blue-700">Secure Data Analytics</span>.
           </p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex flex-col md:flex-row justify-center gap-4">
             {[
               ['ai', 'Artificial Intelligence Topics', <Brain className="w-5 h-5" />],
               ['security', 'Secure Data Analytics Topics', <Shield className="w-5 h-5" />],

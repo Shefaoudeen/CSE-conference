@@ -7,8 +7,8 @@ const ProfessorCard = (props) => {
   return (
     <div className="border bg-white p-4 rounded-xl hover:scale-105 text-center transition-all hover:bg-blue-50 shadow-lg shadow-blue-900">
       <h1 className="font-bold text-blue-800 text-lg">{props.name}</h1>
-      <h1 className="flex items-center gap-2">
-        <FaGraduationCap className="text-blue-700" />
+      <h1 className="flex items-center gap-2 text-left">
+        <FaGraduationCap size={20} className="text-blue-700" />
         Professor, CSE, Puducherry Technological University
       </h1>
       <h1 className="flex gap-2 items-center">

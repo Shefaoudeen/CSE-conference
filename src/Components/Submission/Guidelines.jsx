@@ -33,32 +33,32 @@ const content = [
 
 const Guidelines = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-200 px-6">
+    <div className="flex items-center justify-center min-h-screen bg-blue-200 px-3 md:px-6">
       
       {/* FULLY CENTERED CONTENT CONTAINER */}
-      <div className="w-full mt-40 max-w-20xl bg-gradient-to-br from-blue-800 via-blue-600 to-blue-400 mb-8 p-12 md:p-16 rounded-2xl shadow-2xl text-white text-justify flex flex-col items-center">
+      <div className="w-full mt-40 max-w-20xl bg-gradient-to-br from-blue-800 via-blue-600 to-blue-400 mb-8 p-6 md:p-16 rounded-2xl shadow-2xl text-white text-justify flex flex-col items-center">
 
         
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-10">
+        <h1 className="text-3xl text-center  md:text-5xl font-bold text-white mb-5 md:mb-10">
           Conference Guidelines
         </h1>
         
         {content.map((section, index) => (
           <div 
             key={index} 
-            className="w-full mb-8 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-justify"
+            className="w-full mb-8 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-4 md:p-8 text-justify"
           >
             <div className="flex flex-col items-center gap-4 mb-6">
               <div className="p-4 rounded-full bg-gradient-to-br from-purple-100 to-blue-100 text-purple-600">
                 {section.icon}
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+              <h2 className="text-xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
                 {section.title}
               </h2>
             </div>
               
             {Array.isArray(section.paragraph) ? (
-              <ul className="space-y-4 text-gray-700 text-lg list-disc px-5">
+              <ul className="space-y-4 text-gray-700 md:text-lg list-disc px-5">
                 {section.paragraph.map((point, idx) => (
                   <li key={idx} className="leading-relaxed">
                     {point}

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import Homepage from "./Pages/Homepage";
 import CallforPaper from "./Pages/CallforPaper";
@@ -13,20 +13,18 @@ import Speakers from "./Pages/Speakers";
 import Venue from "./Pages/Venue";
 import { ParallaxProvider } from "react-scroll-parallax";
 import LoginPage from "./Components/Registration/Loginpage";
-import ViewSubmittedPaper from './components/ViewSubmittedPaper';
+
 
 
 export default function App() {
   return (
     <ParallaxProvider>
-      <BrowserRouter basename='/icaisda25'>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Homepage />} />
             <Route path="/callforpaper" element={<CallforPaper />} />
             <Route path="/papersubmission" element={<PaperSubmission />} />
-            <Route path="/paperRegistration" element={<PaperRegistration />} />
-            <Route path="/WorkShop" element={<WorkShop />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/committees" element={<Committees />} />
@@ -34,10 +32,9 @@ export default function App() {
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/speakers" element={<Speakers />} />
             <Route path="/venue" element={<Venue />} />
-            <Route path="/view-paper" element={<ViewSubmittedPaper />} />
         </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ParallaxProvider>
   );
 }

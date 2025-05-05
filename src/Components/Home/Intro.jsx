@@ -3,8 +3,8 @@ import icdnLogo from "../../assets/Images/logos/mainLogo.png";
 
 const Intro = () => {
   return (
-    <div className="w-screen relative min-h-screen flex justify-center items-center pt-[35vh]">
-      <div className="w-[75%] text-justify text-lg tracking-wide leading-relaxed flex flex-col gap-6">
+    <div className="w-screen relative md:min-h-screen flex justify-center items-center pt-10 md:pt-[35vh]">
+      <div className="w-[90%] md:w-[75%] text-justify text-lg tracking-wide leading-relaxed flex flex-col gap-6">
         <img
           src={icdnLogo}
           alt="logo"

@@ -4,11 +4,11 @@ import cseImg from "../../assets/Images/cs3.jpg";
 const CSE = () => {
   return (
     <div className="w-screen flex justify-center items-center mt-10 mb-5 pb-5  border-gray-300">
-      <div className="w-[75%] text-justify items-center text-lg flex flex-row-reverse gap-6 tracking-wide leading-relaxed ">
-        <div className="w-[40%]">
+      <div className="w-[90%] md:w-[75%] text-justify items-center text-lg flex flex-col md:flex-row-reverse gap-6 tracking-wide leading-relaxed ">
+        <div className="w-full md:w-[40%]">
           <img src={cseImg} className=" h-96 object-cover" alt="" />
         </div>
-        <div className="w-[60%]">
+        <div className="w-full w-[60%]">
           <h1 className="text-3xl font-bold mb-10 text-blue-800">
             About CSE DEPARTMENT
           </h1>
