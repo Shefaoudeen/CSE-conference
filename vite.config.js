@@ -1,8 +1,8 @@
+// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
-  base : '/icaisda25/',
-  plugins: [react()]
+  base: '/icaisda25/', // 👈 Important for GitHub Pages or subfolder hosting
+  plugins: [react()],
 })
